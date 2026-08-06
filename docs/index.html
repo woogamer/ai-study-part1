@@ -609,21 +609,44 @@
 <!-- 26. 시연 3 주식 -->
 <section>
   <div class="demo-badge">LIVE 시연 ②</div>
-  <h2>주식 봇 <span class="small">— 사흘 연속, 사람 없이</span></h2>
-  <p style="font-size:0.54em; margin-top:-2px;">환율 전략 하나만 떼어 보겠습니다. 유가 신호가 켜지면 사고, 꺼지면 팝니다. <b>제가 한 건 없습니다.</b></p>
-  <table style="width:100%; font-size:0.52em;">
-    <tr><th>날짜</th><th>유가 신호</th><th>목표 비중</th><th>봇이 한 일</th></tr>
-    <tr><td><b>첫째 날</b></td><td>ON</td><td>50%</td><td><span style="color:var(--emerald); font-weight:700;">매수 32주</span> <span class="small">주문 E9zd_UPdG23d…</span></td></tr>
-    <tr><td><b>둘째 날</b></td><td>OFF</td><td>0%</td><td><span style="color:var(--danger); font-weight:700;">매도 32주</span> <span class="small">주문 WygxG08om167…</span></td></tr>
-    <tr><td><b>셋째 날</b></td><td>ON</td><td>50%</td><td><span style="color:var(--emerald); font-weight:700;">매수 31주</span> <span class="small">주문 xWdUoP6Yk6xr…</span></td></tr>
-  </table>
-  <div class="live">
-    <b>그리고 15분마다 시장을 봅니다</b> — 실제 로그<br>
-    변화 없음 (2/4) · 변화 없음 (2/4) · 변화 없음 (2/4) …<br>
-    <span style="color:var(--muted)">4개 조건 중 2개 통과 — 유가 75.3$ ✗ · 미10Y 4.63% ✗ · 외국인 순매수 +268만주 ✓ · 원화 강세 ✓</span>
+  <h2>주식 봇 <span class="small">— 판단하고 · 사고팔고 · 지켜봅니다</span></h2>
+  <div class="flow" style="margin-top:6px;">
+    <div class="step"><div class="t">① 판단 <span style="font-weight:400; color:var(--muted);">아침</span></div><div class="d">유가·유동성 신호를 읽고 <b>오늘의 목표 비중</b>을 정합니다<br><span style="color:#94a3b8;">신호 켜짐 → 50% · 꺼짐 → 0%</span></div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="t">② 매매</div><div class="d">지금 보유량과 목표가 <b>다를 때만</b> 주문을 냅니다<br><span style="color:#94a3b8;">같으면 아무것도 안 함</span></div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="t">③ 감시 <span style="font-weight:400; color:var(--muted);">15분마다</span></div><div class="d">유가·금리·외국인 수급·환율 <b>4개 신호</b>를 다시 채점. 바뀌면 알림</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="t">④ 보고 <span style="font-weight:400; color:var(--muted);">장 마감</span></div><div class="d">오늘 몇 점이었는지 기록하고 <b>텔레그램</b>으로 리포트</div></div>
   </div>
-  <div class="callout" style="font-size:0.55em;">시연 — 텔레그램을 열어서 <b>잔고 조회</b> · <b>"오늘 어때"</b> 한 줄 질문 · 마감 리포트</div>
-  <aside class="notes">사흘 연속 포지션을 뒤집은 게 핵심 — 사람이 안 봐도 돌아간다는 증거. 실계좌·소액임을 명시. 시연 실패해도 이 표로 충분. (2.5분)</aside>
+  <div style="display:flex; gap:14px; margin-top:10px; align-items:flex-start;">
+    <div style="flex:1.15;">
+      <p style="font-size:0.46em; font-weight:700; color:var(--navy); margin:0 0 3px 0;">최근 2주, 봇이 실제로 한 일 — 실계좌</p>
+      <table style="width:100%; font-size:0.44em;">
+        <tr><th>날짜</th><th>신호</th><th>목표</th><th>주문</th></tr>
+        <tr><td>7/22–7/27</td><td>✗</td><td>0%</td><td style="color:var(--muted);">관망 — 4일 연속 아무것도 안 함</td></tr>
+        <tr><td>7/28</td><td>✗</td><td>0%</td><td><span style="color:var(--danger); font-weight:700;">매도 1주</span> <span style="color:var(--muted);">잔량 정리</span></td></tr>
+        <tr><td>7/29–7/31</td><td>✗</td><td>0%</td><td style="color:var(--muted);">관망 — 3일 연속</td></tr>
+        <tr><td><b>8/3</b></td><td>✓</td><td>50%</td><td><span style="color:var(--emerald); font-weight:700;">매수 32주</span></td></tr>
+        <tr><td><b>8/4</b></td><td>✗</td><td>0%</td><td><span style="color:var(--danger); font-weight:700;">매도 32주</span></td></tr>
+        <tr><td><b>8/5</b></td><td>✓</td><td>50%</td><td><span style="color:var(--emerald); font-weight:700;">매수 31주</span></td></tr>
+        <tr><td>8/6</td><td>✓</td><td>50%</td><td style="color:var(--muted);">관망 — 이미 보유 중</td></tr>
+      </table>
+    </div>
+    <div style="flex:1;">
+      <div class="live" style="margin-top:16px;">
+        <b>15분마다 남는 감시 로그</b><br>
+        변화 없음 (2/4) · 변화 없음 (2/4) · 변화 없음 (2/4) …<br><br>
+        <span style="color:var(--muted)">4개 조건 중 2개 통과<br>
+        유가 75.3$ ✗ · 미10Y 4.63% ✗<br>
+        외국인 순매수 +268만주 ✓ · 원화 강세 ✓</span>
+      </div>
+    </div>
+  </div>
+  <div class="callout"><b>11일 중 8일은 아무것도 하지 않았습니다.</b> 조건이 안 맞으면 안 합니다.<br>
+  <span class="small">자동화는 <b>자주 하는 게 아니라 정해진 대로만 하는 것</b>입니다 — 그래서 사람이 안 봐도 됩니다.<br>
+  시연 — 텔레그램을 열어 <b>잔고 조회</b> · <b>"오늘 어때"</b> 한 줄 질문 · 마감 리포트</span></div>
+  <aside class="notes">"8일은 아무것도 안 했다"가 이 슬라이드의 한 문장. AI가 막 사고팔 거라는 청중의 인상을 깨는 지점. 실계좌·소액임을 명시. 시연 실패해도 이 표로 충분. (3분)</aside>
 </section>
 
 <!-- 27. Part 2 -->
